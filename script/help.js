@@ -6,7 +6,7 @@ module.exports.config = {
 	aliases: ['help'],
 	description: "Beginner's guide",
 	usage: "Help [page] or [command]",
-	credits: 'Develeoper',
+	credits: 'gerald max',
 };
 module.exports.run = async function({
 	api,
@@ -25,14 +25,14 @@ module.exports.run = async function({
 			let page = 1;
 			let start = (page - 1) * pages;
 			let end = start + pages;
-			let helpMessage = `🔴🟢🟡\n\n====『 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧: 』====\n
+			let helpMessage = 'Gerald assistant autobot\n\n====『 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧: 』====\n
 ▱▱▱▱▱▱▱▱▱▱▱▱▱\n\n`;
 			for (let i = start; i < Math.min(end, commands.length); i++) {
 				helpMessage += `╭─╮\n |\t『 ${i + 1}.』  ${prefix}${commands[i]}\n╰─────────────ꔪ\n`;
 			}
-			helpMessage += '\n====『 𝗘𝗩𝗘𝗡𝗧 𝗟𝗜𝗦T: 』====\n▱▱▱▱▱▱▱▱▱▱▱▱▱\n\n';
+			helpMessage += '\n====『 Events: 』====\n▱▱▱▱▱▱▱▱▱▱▱▱▱\n\n';
 			eventCommands.forEach((eventCommand, index) => {
-				helpMessage += `╭─────────────────╮\n |\t『 ${index + 1}.』  ${prefix}${eventCommand}\n╰─────────────────╯ \n`;
+				helpMessage += `╭───── gerald ─────╮\n |\t『 ${index + 1}.』  ${prefix}${eventCommand}\n╰─────────────────╯ \n`;
 			});
 			helpMessage += `\nPage ${page}/${Math.ceil(commands.length / pages)}. To view the next page, type '${prefix}help page number'. To view information about a specific command, type '${prefix}help command name'.`;
 			api.sendMessage(helpMessage, event.threadID, event.messageID);
@@ -41,7 +41,7 @@ module.exports.run = async function({
 			const pages = 999;
 			let start = (page - 1) * pages;
 			let end = start + pages;
-			let helpMessage = `𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧:\n\n`;
+			let helpMessage = `assist bot gerald\n__________________\n\n𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧:\n\n`;
 			for (let i = start; i < Math.min(end, commands.length); i++) {
 				helpMessage += `\t${i + 1}. 『 ${prefix}${commands[i]} 』\n`;
 			}
@@ -72,10 +72,10 @@ module.exports.run = async function({
 				const creditsMessage = credits ? `➛ Credits: ${credits}\n` : '';
 				const versionMessage = version ? `➛ Version: ${version}\n` : '';
 				const cooldownMessage = cooldown ? `➛ Cooldown: ${cooldown} second(s)\n` : '';
-				const message = ` 「 Command 」\n\n➛ Name: ${name}\n${versionMessage}${roleMessage}\n${aliasesMessage}${descriptionMessage}${usageMessage}${creditsMessage}${cooldownMessage}`;
+				const message = ` 「 info 」\n\n➛ Name: ${name}\n${versionMessage}${roleMessage}\n${aliasesMessage}${descriptionMessage}${usageMessage}${creditsMessage}${cooldownMessage}`;
 				api.sendMessage(message, event.threadID, event.messageID);
 			} else {
-				api.sendMessage('Command not found.', event.threadID, event.messageID);
+				api.sendMessage('Command not found in gerald assist system.', event.threadID, event.messageID);
 			}
 		}
 	} catch (error) {
